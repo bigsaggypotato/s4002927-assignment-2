@@ -2,8 +2,8 @@
 
 ## Student details
 
-- Full Name: Demo Student
-- Student ID: sNNNNNN
+- Full Name: Victoria Hill
+- Student ID: s4002927
 
 ## Solution design
 
