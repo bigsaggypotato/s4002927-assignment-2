@@ -1,0 +1,23 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Run Terraform
+        run: terraform apply -auto-approve
+
+      - name: Run Ansible
+        run: ansible-playbook -i "3.81.169.60," -u ubuntu --key-file vockey.pem deploy.yml
