@@ -20,7 +20,7 @@
         name: postgres-db
         image: postgres
         env:
-          POSTGRES_USER: foo
+          POSTGRES_USER: admin
           POSTGRES_PASSWORD: secret
         state: started
         restart_policy: always
