@@ -43,7 +43,7 @@ The GitHub Actions workflow automates the deployment process:
 
 ## Backup Process: Deploying from a Shell Script
 The backup process utilizes a shell script (`deploy.sh`) to automate:
-- Terraform initialization and apply commands to create infrastructure.
+- Terraform initialisation and apply commands to create infrastructure.
 - Ansible playbook execution to set up the application.
 This script can be executed anytime to re-deploy the app or create a new environment.
 
