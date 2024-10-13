@@ -1,0 +1,26 @@
+
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Run Foo app Docker container
+      docker_container:
+        name: foo-app
+        image: mattcul/assignment2app  # The foo app's Docker image
+        state: started
+        restart_policy: always
+
+    - name: Run PostgreSQL Docker container
+      docker_container:
+        name: postgres-db
+        image: postgres
+        env:
+          POSTGRES_USER: foo
+          POSTGRES_PASSWORD: secret
+        state: started
+        restart_policy: always
